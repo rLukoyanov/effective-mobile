@@ -5,10 +5,10 @@ import (
 )
 
 type Config struct {
-	DB_PATH   string `env:"DB_PATH" envDefault:"./data/persons.db"`
-	PORT      string `env:"PORT" envDefault:"8080"`
-	LOG_LEVEL string `env:"LOG_LEVEL" envDefault:"debug"`
-	MODE      string `env:"MODE" envDefault:"dev"`
+	POSTGRES_DSN string `env:"POSTGRES_DSN" envDefault:"postgresql://root:123@localhost:5432/base?sslmode=disable"`
+	PORT         string `env:"PORT" envDefault:"8080"`
+	LOG_LEVEL    string `env:"LOG_LEVEL" envDefault:"debug"`
+	MODE         string `env:"MODE" envDefault:"dev"`
 }
 
 func NewConfig() (*Config, error) {
